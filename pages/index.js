@@ -1,17 +1,23 @@
 import Head from 'next/head';
-// import {replies} from './data';
-// import {useState} from 'react';
+import {useState} from 'react';
 
 export default function Home(){
 
-    // const [reply,setReply] = useState(initialState: 'Ask me anything');
+    const [storeInfo, lastInputStore] = useState('Store Info');
 
-    // function questionAskedHandler(event){
-    //     event.preventDefault():
-    //     const randomReply = replies[Math.floor(x:Math.random()*replies.length)]
-    //     alert(event.target.question.value):
-    //     setReply(randomReply):
-    // }
+
+    function answerHandler(event){
+        event.preventDefault()
+        
+        let where = event.target.location.value
+        let min = event.target.minhourly.value
+        let max = event.target.maxhourly.value
+        let avg = event.target.avgcps.value
+
+        let phrase = "".concat("{","\"location\":\"",where,"\",\"minCustomers\":", min,",\"maxCustomers\":", max,",\"avgCookies\":",avg,"}");
+        alert(phrase);
+        lastInputStore(phrase);
+    }
 
     return (
         <div>
@@ -22,28 +28,26 @@ export default function Home(){
                 <h1 className = "text-4xl">Cookie Stand Admin</h1>
             </header>
             <main className="bg-main-bg">
-              {/* onSubmit{questionAskedHandler} */}
-                        {/* <p>{setReply}</p> */}
                 <div className = "p-8 flex justify-center">
                   <div className = "p-4 bg-form-bg  flex rounded-md w-2/3 flex-col">  
                     <h1 className ="flex justify-center text-xl font-semibold">Create Cookie Stand</h1>
-                    <form>
+                    <form onSubmit={answerHandler}>
                     <div className = "py-4 w-full">
-                      <label >Location</label>
-                      <input name="Location" className = "w-5/6"/>
+                      <label >Location  </label>
+                      <input name="location" className = "w-11/12"/>
                       </div>
                       <div className = "flex items-center">
                       <div>
                       <label>Minimum Customers per Hour</label>
-                      <input name="minhourly"/>
+                      <input name="minhourly" className = "w-5/6"/>
                       </div>
                       <div>
                       <label>Maximum Customers per Hour</label>
-                      <input name="maxhourly"/>
+                      <input name="maxhourly" className = "w-5/6"/>
                       </div>
                       <div>
                       <label>Average Cookies per Sale</label>
-                      <input name="avgcps"/>
+                      <input name="avgcps" className = "w-5/6"/>
                       </div>
                       <button className="px-20 py-4 bg-button text-text-black font-semibold">Create</button>
                       </div>
@@ -53,6 +57,9 @@ export default function Home(){
 
                 <div>
                 <p className ="p-4 text-table-text relative flex items-center justify-center">Report Table Coming Soon...</p>
+
+                <p className ="p-4 text-table-text relative flex items-center justify-center">{storeInfo}</p>
+
                 </div>
             </main>
             <footer className = "p-4 bg-footer-green text-gray-50">
