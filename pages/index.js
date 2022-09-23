@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import {useState} from 'react';
+import Link from 'next/link';
 
 export default function Home(){
 
@@ -68,6 +69,9 @@ export default function Home(){
             href="https://www.linkedin.com/in/jae-loney/">
             <p> Made by Jae - Click to Connect! </p>
           </a>
+          <h1 className="title">
+          <Link href="/start">Click to Read More on Next JS!</Link>
+          </h1>
             </footer>
         </div>
     );
