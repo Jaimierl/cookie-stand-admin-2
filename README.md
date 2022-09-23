@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ReadMe
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This project is an expansion of the 201 project called salmon-cookies. The purpose is to take in user data and display it onto the screen using react, next.js, and tailwinds.
 
 ## Getting Started
 
