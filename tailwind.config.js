@@ -10,6 +10,7 @@ module.exports = {
         'text-black': '#000403',
         'header-green':'#36ca95',
         'main-bg':'#ecfdf5',
+        'input-bg':'#9af4c5',
         'form-bg': '#6fe6b7',
         'button':'#15b981',
         'table-text':'#606b75',
